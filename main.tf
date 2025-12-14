@@ -11,7 +11,7 @@ module "elastiCache" {
   subnet_ids            = [module.network.subnet_priv_1a, module.network.subnet_priv_1b]
   allowed_cidrs         = [module.network.vpc_cidr]
   replication_group_id  = "elastic-cache-redis-${terraform.workspace}"
-  node_type             = "cache.t3.micro"
+  node_type             =  var.node_type
   replicas_per_node_group = 1 # 1 replica (total = 2 nós)
   engine_version          = "7.1"
 }

@@ -15,3 +15,9 @@ variable "cidr_block" {
 variable "env" {
   type = string
 }
+
+variable "node_type" {
+  description = "Tipo de instância do Redis"
+  type        = string
+  default     = "cache.t3.micro"
+}
